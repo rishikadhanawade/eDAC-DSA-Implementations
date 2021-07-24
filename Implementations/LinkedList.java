@@ -193,6 +193,20 @@ public class LinkedList {
 		}
 		
 	}
+	public void reverse()
+	{
+		Node curr=root;
+		Node prev=null;
+		Node next=null;
+		while(curr!=null)
+		{
+			next=curr.next;
+			curr.next=prev;
+			prev=curr;
+			curr=next;
+		}
+		root=prev;
+	}
 	public static void main(String[] args) {
 		
 		int ch;
@@ -252,6 +266,11 @@ public class LinkedList {
 				case 10:
 					System.out.println("Sort");
 					l.sort();
+					break;
+				case 10:
+					System.out.println("Reverse");
+					l.reverse();
+					break;
 				case 0:
 					System.out.println("Exiting");
 					break;
